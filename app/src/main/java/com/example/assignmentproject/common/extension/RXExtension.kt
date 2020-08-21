@@ -22,9 +22,10 @@ inline fun <reified T> Single<ApiResponse<T>>.request(
         .doOnTerminate { onTerminate() }
         .subscribe({ next ->
             if (next.isSuccess==true) {
-                next.response?.let { onSuccess(it) }
+                next.articles?.let { onSuccess(it) }
             }
         }, { error ->
+            onError(error)
         })
 }
 

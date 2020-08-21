@@ -15,7 +15,7 @@ abstract class BaseListAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) : List
         return BaseViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) = holder.bind(getItem(position), getCallbackForPosition(position))
+    override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) = holder.bind(getItem(position))
 
     override fun getItemViewType(position: Int): Int = getLayoutIdForPosition(position)
 
