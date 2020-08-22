@@ -8,7 +8,7 @@ import java.util.*
 
 data class ArticlesItem(
     @SerializedName("publishedAt")
-    val publishedAt: String? = "",
+    var publishedAt: String? = "",
     @SerializedName("author")
     val author: String? = "",
     @SerializedName("urlToImage")

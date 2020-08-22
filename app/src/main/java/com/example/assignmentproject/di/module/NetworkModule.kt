@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.assignmentproject.BuildConfig
 import com.example.assignmentproject.network.Urls
 import com.example.assignmentproject.network.enableTls12
-import com.example.newproject.network.HzExclusionStrategy
+import com.example.assignmentproject.network.HzExclusionStrategy
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

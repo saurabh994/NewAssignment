@@ -1,6 +1,5 @@
-package com.example.newproject.network
+package com.example.assignmentproject.network
 
-import com.example.assignmentproject.network.Exclude
 import com.google.gson.ExclusionStrategy
 import com.google.gson.FieldAttributes
 

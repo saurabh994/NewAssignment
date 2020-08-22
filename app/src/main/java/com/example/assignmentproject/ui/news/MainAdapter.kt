@@ -16,7 +16,7 @@ class MainAdapter(val listener: MainNavigator) : BaseListAdapter<ArticlesItem>(A
         super.onBindViewHolder(holder, position)
         holder.itemView.setOnClickListener {
             getItem(position)?.apply {
-//                listener.onClickItem(position, this)
+                listener.onClickItem(this)
             }
         }
     }

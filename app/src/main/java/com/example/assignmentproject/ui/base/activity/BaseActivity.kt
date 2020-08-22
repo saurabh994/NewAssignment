@@ -15,6 +15,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
+import com.example.assignmentproject.BR
 
 abstract class BaseActivity<D : ViewDataBinding, V : BaseActivityViewModel> : AppCompatActivity(),
     HasAndroidInjector {
@@ -49,6 +50,7 @@ abstract class BaseActivity<D : ViewDataBinding, V : BaseActivityViewModel> : Ap
         //create data binding layout and set view model
         binding = DataBindingUtil.setContentView(this, layoutViewRes)
         binding.lifecycleOwner = this
+        binding.setVariable(BR.viewModel,viewModel)
         onViewCreated()
     }
 
