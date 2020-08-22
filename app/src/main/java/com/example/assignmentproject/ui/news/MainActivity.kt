@@ -35,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>(),
 
     override fun onViewModelCreated() {
         super.onViewModelCreated()
-        viewModel.articlesLiveData.observe(this, Observer {
+        viewModel.newsData.observe(this, Observer {
             mainAdapter.submitList(it)
         })
     }

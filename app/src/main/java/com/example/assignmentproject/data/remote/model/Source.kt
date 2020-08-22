@@ -7,5 +7,5 @@ data class Source(
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("id")
-    val id: Any? = null
+    val id: String? = null
 ):Serializable

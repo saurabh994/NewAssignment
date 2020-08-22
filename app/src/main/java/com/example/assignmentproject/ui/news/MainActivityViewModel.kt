@@ -1,5 +1,6 @@
 package com.example.assignmentproject.ui.news
 
+import androidx.lifecycle.LiveData
 import com.example.assignmentproject.common.extension.request
 import com.example.assignmentproject.common.widget.ListLiveData
 import com.example.assignmentproject.data.remote.model.ArticlesItem
@@ -11,9 +12,11 @@ import javax.inject.Inject
 
 @ActivityScope
 class MainActivityViewModel @Inject constructor(private val mainRepository: MainRepository): BaseActivityViewModel() {
-    val articlesLiveData = ListLiveData<ArticlesItem>()
+    lateinit var newsData: LiveData<List<ArticlesItem>>
     override fun handleCreate() {
         super.handleCreate()
+        newsData = mainRepository.getAllPostsFromLocal()
+
         getArticles()
     }
 
@@ -24,7 +27,7 @@ class MainActivityViewModel @Inject constructor(private val mainRepository: Main
             },{
 
             },{
-               articlesLiveData.addAll(it)
+                it.let { it1 -> mainRepository.insert(it1) }
             },{
                Timber.e(it)
             })

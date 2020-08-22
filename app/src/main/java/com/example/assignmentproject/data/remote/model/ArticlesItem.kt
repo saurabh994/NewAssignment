@@ -1,12 +1,17 @@
 package com.example.assignmentproject.data.remote.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Entity
 data class ArticlesItem(
+    @PrimaryKey(autoGenerate = true)
+    var id:Int = 0,
     @SerializedName("publishedAt")
     var publishedAt: String? = "",
     @SerializedName("author")

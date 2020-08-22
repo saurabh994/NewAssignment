@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module(
     includes = [AndroidSupportInjectionModule::class, ActivityBuilderModule::class,TimberModule::class, RxJavaModule::class,
-        NetworkModule::class,ApiModule::class]
+        NetworkModule::class,ApiModule::class,RoomModule::class]
 )
 abstract class ApplicationModule {
     @Binds
