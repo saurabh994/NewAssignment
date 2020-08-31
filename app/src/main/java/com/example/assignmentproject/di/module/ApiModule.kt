@@ -10,6 +10,6 @@ import javax.inject.Singleton
 class ApiModule {
     @Provides
     @Singleton
-    fun provideOTPApi(retrofit: Retrofit): MainInterface =
+    fun provideMainApi(retrofit: Retrofit): MainInterface =
         retrofit.create(MainInterface::class.java)
 }

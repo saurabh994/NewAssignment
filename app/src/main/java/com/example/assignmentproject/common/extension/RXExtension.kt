@@ -19,7 +19,7 @@ inline fun <reified T> Single<ApiResponse<T>>.request(
 ): Disposable {
     return applyIoScheduler()
         .doOnSubscribe { onSubscribe() }
-        .doOnTerminate { onTerminate() }
+//        .doOnTerminate { onTerminate() }
         .subscribe({ next ->
             if (next.isSuccess==true) {
                 next.articles?.let { onSuccess(it) }

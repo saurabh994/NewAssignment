@@ -26,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>(),
     override fun onViewCreated() {
         super.onViewCreated()
         setToolbar(toolbar)
+        this.setToolbar(toolbar)
         val tvTitle = toolbar.findViewById<TextView>(R.id.tv_title)
         tvTitle.text = "HEADLINES"
         supportActionBar?.title = ""
@@ -41,7 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>(),
     }
 
     override fun onClickItem(item: ArticlesItem) {
-        val intent = Intent(this,MainActivityDetail::class.java)
+        val intent = Intent(this,MainActivity::class.java)
         intent.putExtra(MainActivityDetail.EXTRA_ARTICLES,Gson().toJson(item))
         startActivity(intent)
     }

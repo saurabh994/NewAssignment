@@ -9,4 +9,7 @@ import com.example.assignmentproject.data.remote.model.ArticlesItem
 interface NewsDao: BaseDao<ArticlesItem>  {
     @Query("SELECT * FROM ArticlesItem")
     fun getAllItems(): LiveData<List<ArticlesItem>>
+
+    @Query("DELETE FROM ArticlesItem")
+    fun clear()
 }

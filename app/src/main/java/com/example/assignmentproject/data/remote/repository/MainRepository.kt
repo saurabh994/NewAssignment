@@ -24,4 +24,7 @@ class MainRepository @Inject constructor(private val mainInterface: MainInterfac
     fun insert(items:List<ArticlesItem>){
         newsDao.insert(items)
     }
+
+    fun clearNewsFromLocal() = newsDao.clear()
+
 }

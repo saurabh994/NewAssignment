@@ -3,6 +3,7 @@ package com.example.assignmentproject
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.example.assignmentproject.di.component.DaggerApplicationComponent
+import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
@@ -17,6 +18,7 @@ class ApplicationClass : DaggerApplication(){
 
     override fun onCreate() {
         super.onCreate()
+        LeakCanary.install(this)
         Timber.plant(timberTree)
     }
 

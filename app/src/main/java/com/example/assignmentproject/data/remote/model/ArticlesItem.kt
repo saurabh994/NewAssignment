@@ -11,6 +11,7 @@ import java.util.*
 @Entity
 data class ArticlesItem(
     @PrimaryKey(autoGenerate = true)
+    @SerializedName("id")
     var id:Int = 0,
     @SerializedName("publishedAt")
     var publishedAt: String? = "",
